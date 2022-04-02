@@ -4,7 +4,7 @@ import styles from './App.module.css'
 import { MovieDetails } from './pages/MovieDetails.jsx';
 import { Landing } from './pages/Landing.jsx';
 import {
-  BrowserRouter,
+  HashRouter as Router,
   Routes,
   Route,
   Link
@@ -12,18 +12,17 @@ import {
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
     <header>
-      {/* */}
       <Link to="/"><h1 className={styles.title}>MOVIES APP</h1> </Link>
     </header>
     <main>
     <Routes>
-          <Route exact path="/movies/:movieId" element={<MovieDetails/>}>Movies</Route>
+          <Route path="/movies/:movieId" element={<MovieDetails/>}>Movies</Route>
           <Route path="/" element={<Landing />}> Home </Route>
         </Routes>
     </main>
-    </BrowserRouter>
+    </Router>
   )
 }
 
