@@ -1,22 +1,24 @@
-import movie from './movie.json';
 import styles from './MovieDetails.module.css'
 import { useParams } from 'react-router-dom';
 import { useEffect,useState } from 'react';
 import { get } from '../utils/httpClient';
+import { Loader } from '../components/Loader';
 
 export function MovieDetails (){
-    const {movieId} = useParams()
-    const [movie, setMovie] = useState(null)
-console.log(movieId)
+    const {movieId} = useParams();
+    const [isLoading, setIsLoading] = useState(true);
+    const [movie, setMovie] = useState(null);
 
 useEffect(() => {
+    setIsLoading(true);
     get("/movie/" + movieId).then((data) => {
-    setMovie(data);
+        setMovie(data);
+        setIsLoading(false);
     });
 }, [movieId]);
 
-if (!movie) {
-    return null;
+if (isLoading) {
+    return <Loader/>;
 }
 
 

@@ -14,7 +14,7 @@ function App() {
   return (
     <Router>
     <header>
-      <Link to="/"><h1 className={styles.title}>MOVIES APP</h1> </Link>
+      <Link to="/"><h1 className={styles.neonText}>Movies</h1> </Link>
     </header>
     <main>
     <Routes>
