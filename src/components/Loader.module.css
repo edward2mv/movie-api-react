@@ -1,17 +1,15 @@
-*
-{
- margin:0;
- margin-top:15px;
- padding:0;
- box-sizing: border-box;
-}
+
 .body
 {
- display:flex;
- justify-content:center ;
- align-items:flex-start;
- min-height:100vh;
- background:#000;
+margin:0;
+margin-top:15px;
+padding:0;
+box-sizing: border-box;
+display:flex;
+justify-content:center ;
+align-items:flex-start;
+min-height:100vh;
+background:#000;
 }
 .loader
 {
@@ -31,8 +29,8 @@
    }
    100%
    {
-    transform: rotate(360deg);
-     filter:hue-rotate(360deg);
+   transform: rotate(360deg);
+   filter:hue-rotate(360deg);
    }
 }
 
