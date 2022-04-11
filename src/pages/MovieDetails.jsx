@@ -4,14 +4,14 @@ import { useEffect,useState } from 'react';
 import { get } from '../utils/httpClient';
 import { Loader } from '../components/Loader';
 import { getMovieImg } from '../utils/getMovieImg';
+import { WatchButton } from '../components/WatchButton';
 
 export function MovieDetails (){
     const {movieId} = useParams();
     const [isLoading, setIsLoading] = useState(true);
     const [movie, setMovie] = useState(null);
-    
     console.log(movie);
-    
+
 useEffect(() => {
     setIsLoading(true);
     get("/movie/" + movieId).then((data) => {
@@ -24,6 +24,7 @@ if (isLoading) {
     return <Loader/>;
 }
 
+console.log(movie.homepage)
 
 const imageUrl = getMovieImg(movie.poster_path,500);
     return (
@@ -35,7 +36,7 @@ const imageUrl = getMovieImg(movie.poster_path,500);
             <strong>Genres:</strong>{" "}{movie.genres.map(genre => genre.name).join(', ')}
         </p>
         <p><strong>Description: </strong>{movie.overview}</p>
-
+        <WatchButton movieHomepage={movie.homepage}/>
     </div>
     </div>);
 
