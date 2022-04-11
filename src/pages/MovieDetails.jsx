@@ -3,12 +3,15 @@ import { useParams } from 'react-router-dom';
 import { useEffect,useState } from 'react';
 import { get } from '../utils/httpClient';
 import { Loader } from '../components/Loader';
+import { getMovieImg } from '../utils/getMovieImg';
 
 export function MovieDetails (){
     const {movieId} = useParams();
     const [isLoading, setIsLoading] = useState(true);
     const [movie, setMovie] = useState(null);
-
+    
+    console.log(movie);
+    
 useEffect(() => {
     setIsLoading(true);
     get("/movie/" + movieId).then((data) => {
@@ -22,7 +25,7 @@ if (isLoading) {
 }
 
 
-const imageUrl = "https://image.tmdb.org/t/p/w500" + movie.poster_path;
+const imageUrl = getMovieImg(movie.poster_path,500);
     return (
     <div className={styles.detailsContainer}>
     <img className={`${styles.col} ${styles.movieImage}`} src={imageUrl} alt={movie.title}/>

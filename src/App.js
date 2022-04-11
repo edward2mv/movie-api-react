@@ -2,7 +2,7 @@
 import React from 'react'
 import styles from './App.module.css'
 import { MovieDetails } from './pages/MovieDetails.jsx';
-import { Landing } from './pages/Landing.jsx';
+import { Landing } from './pages/Landing';
 import {
   HashRouter as Router,
   Routes,
@@ -14,7 +14,7 @@ function App() {
   return (
     <Router>
     <header>
-      <Link to="/"><h1 className={styles.neonText}>Movies</h1> </Link>
+      <Link to="/"><h1 className={styles.neonText}>MOVIES REACTION</h1> </Link>
     </header>
     <main>
     <Routes>

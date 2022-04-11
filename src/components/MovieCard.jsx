@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './MovieCard.module.css';
+import {getMovieImg} from "../utils/getMovieImg.js"
 
-function MovieCard(props) {
-const {movie} = props;
-const imageUrl = "https://image.tmdb.org/t/p/w300" + movie.poster_path;
+function MovieCard({movie}) {
+    const imageUrl = getMovieImg(movie.poster_path,300)
 return (
     <li className={styles.movieCard}>
     <Link to={"/movies/"+ movie.id}>
