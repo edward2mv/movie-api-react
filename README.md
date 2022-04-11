@@ -1,8 +1,8 @@
-Portfolio Website - v2.0<br/>
+Movie Reaction live demo<br/>
   <a href="https://edward2mv.github.io/movie-api-react/" target="_blank">moviereaction.com</a>
 </h2>
 <div align="center">
-  <img alt="Demo" src="./Images/readme-img1.png" />
+  <img alt="Demo" src="./readme-img1.png" />
 </div>
 
 <br/>
