@@ -23,15 +23,16 @@ useEffect(() => {
 if (isLoading) {
     return <Loader/>;
 }
-
-console.log(movie.homepage)
-
 const imageUrl = getMovieImg(movie.poster_path,500);
+
+const releaseYear = movie.status ==="Released" ? movie.release_date.slice(0,4) : movie.status;
+
     return (
+
     <div className={styles.detailsContainer}>
     <img className={`${styles.col} ${styles.movieImage}`} src={imageUrl} alt={movie.title}/>
     <div className={`${styles.col} ${styles.movieDetails}`}>
-        <p className={`${styles.firtItem}`}><strong>Title: </strong>{movie.title}</p>
+        <p className={`${styles.firtItem}`}><strong>Title: </strong>{movie.title} ({releaseYear})</p>
         <p>
             <strong>Genres:</strong>{" "}{movie.genres.map(genre => genre.name).join(', ')}
         </p>
