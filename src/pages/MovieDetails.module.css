@@ -11,12 +11,19 @@
     margin: 15px;
 }
 
+
 .movieImage {
     border-radius: 15px;
 }
 
 .movieDetails{
     font-size: 1.5rem;
+}
+.movieFacts{
+    font-family:"Source Sans Pro";
+    font-size: 14px;
+}
+.quote{
 }
 .movieButton {
     position: relative;
@@ -30,6 +37,9 @@
     cursor: pointer;
     font-size: 15px;
     transition: all .3s;
+}
+.altTextButton{
+    color: red;
 }
 .fistItem{
     margin: top 0;

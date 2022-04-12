@@ -4,8 +4,8 @@ export function WatchButton(props){
         <div className={styles.wrapper}>
             <div className={styles.outer}>
                 <button className={styles.watchButton} onClick={()=>window.open(props.movieHomepage, '_blank')}>Watch Now</button>
-                <span></span>
-                <span></span>
+                <span className={styles.watchSpan}></span>
+                <span className={styles.watchSpan}></span>
             </div>
         </div>
     );

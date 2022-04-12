@@ -10,6 +10,9 @@
     border-radius:10px;
     background-color:azure;
 }
+.releaseYear{
+    color:grey;
+}
 @media(max-width:560px){
     .movieImage{
         width:90% ;

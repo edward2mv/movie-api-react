@@ -16,7 +16,7 @@
 }
 
 .watchButton,
-span {
+.watchSpan {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -41,7 +41,7 @@ span {
     outline: none;
 }
 
-span {
+.watchSpan {
     background: inherit;
 }
 

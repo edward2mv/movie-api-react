@@ -1,11 +1,14 @@
-import React from 'react';
+import {React} from 'react';
 import { Link } from 'react-router-dom';
 import styles from './MovieCard.module.css';
 import {getMovieImg} from "../utils/getMovieImg.js"
 
 function MovieCard({movie}) {
     const imageUrl = getMovieImg(movie.poster_path,300)
+    const releaseYear = movie.release_date ==="" ? "Coming Soon" : movie.release_date.slice(0,4)
+    console.log(movie);
 return (
+
     <li className={styles.movieCard}>
     <Link to={"/movies/"+ movie.id}>
     <img
@@ -15,7 +18,7 @@ return (
         src={imageUrl}
         alt={movie.title}
     />
-    <div>{movie.title}</div>
+    <div>{movie.title} <span className={styles.releaseYear}>({releaseYear})</span></div>
     </Link>
     </li>
 )
